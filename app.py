@@ -337,7 +337,7 @@ if aba == "Desempenhos em Redação":
 
     fig.update_layout(
         title=dict(
-            text=f"Redação - Participação vs Notas - {escola_escolhida}",
+            text=f"Desempenhos em Redação: {escola_escolhida}",
             font=dict(size=26)  # só o título
         ),
         font=dict(size=16),     # resto (legenda, etc.)
@@ -547,4 +547,5 @@ elif aba == "Detalhamento de Acessos":
         st.warning("Não há registros de acessos detalhados para esta regional.")
     else:
         st.subheader("Detalhamento de Acessos")
+
         st.dataframe(df_acessos_reg, use_container_width=True, hide_index=True)
