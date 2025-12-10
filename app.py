@@ -169,10 +169,17 @@ for df_src in [df_redacao, df_objetivas, df_part, df_acessos]:
 
 regionais_no_arquivo = sorted(regionais_set)
 
+# Remove a regional "DE UNIDADES ESCOLARES PRISIONAIS E SOCIOEDUCATIVAS"
+nome_excluir = "DE UNIDADES ESCOLARES PRISIONAIS E SOCIOEDUCATIVAS".upper()
+regionais_no_arquivo = [
+    r for r in regionais_no_arquivo
+    if isinstance(r, str) and r.strip().upper() != nome_excluir
+]
+
+
 if not regionais_no_arquivo:
     st.error("Nenhuma regional encontrada nas planilhas.")
     st.stop()
-
 
 st.markdown(
     "<div style='font-size:22px; margin-bottom:10px;'>Selecione a Regional:</div>",
@@ -919,4 +926,5 @@ elif aba == "Detalhamento de Acessos":
             )
 
             st.subheader("Detalhamento de Acessos")
+
             st.dataframe(styler_acessos, use_container_width=True, hide_index=True)
