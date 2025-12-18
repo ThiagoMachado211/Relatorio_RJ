@@ -440,7 +440,7 @@ if aba == "Desempenhos em Redação":
                 customdata=customdata_notas_reg,
                 mode="lines+markers",
                 marker=dict(color="#000000"),
-                name="Acertos (Regional)",
+                name="Média da regional",
                 line=dict(color="#000000", dash="dot"),
                 hovertemplate=(
                     "Etapa: %{x}<br>"
@@ -622,7 +622,7 @@ elif aba == "Desempenhos nas Provas Objetivas":
             x=etapas_obj,
             y=acertos_obj_frac,
             mode="lines+markers+text",
-            name="Acertos (Escola)",
+            name="Média da escola",
             text=[f"{v:.2f}%" if pd.notna(v) else "" for v in acertos_obj],
             textposition="top center",
             marker=dict(color="#000000"),
@@ -686,7 +686,7 @@ elif aba == "Desempenhos nas Provas Objetivas":
                 line=dict(color="#000000", dash="dot"),
                 hovertemplate=(
                     "Etapa: %{x}<br>"
-                    "Acertos (Regional): %{y:.2%}<extra></extra>"
+                    "Média da regional: %{y:.2%}<extra></extra>"
                 ),
             )
         )
@@ -928,4 +928,5 @@ elif aba == "Detalhamento de Acessos":
             st.subheader("Detalhamento de Acessos")
 
             st.dataframe(styler_acessos, use_container_width=True, hide_index=True)
+
 
