@@ -418,11 +418,11 @@ if aba == "Desempenhos em Redação":
                 y=part_reg_frac,
                 mode="lines+markers",
                 marker=dict(color="#FF8C00"),
-                name="Participação (Regional)",
+                name="Participação da regional",
                 line=dict(color="#FF8C00", dash="dot"),
                 hovertemplate=(
                     "Etapa: %{x}<br>"
-                    "Participação (Regional): %{y:.2%}<extra></extra>"
+                    "Participação da regional: %{y:.2%}<extra></extra>"
                 ),
             )
         )
@@ -440,7 +440,7 @@ if aba == "Desempenhos em Redação":
                 customdata=customdata_notas_reg,
                 mode="lines+markers",
                 marker=dict(color="#000000"),
-                name="Notas (Regional)",
+                name="Acertos (Regional)",
                 line=dict(color="#000000", dash="dot"),
                 hovertemplate=(
                     "Etapa: %{x}<br>"
@@ -666,11 +666,11 @@ elif aba == "Desempenhos nas Provas Objetivas":
                 y=part_obj_reg_frac,
                 mode="lines+markers",
                 marker=dict(color="#FF8C00"),
-                name="Participação (Regional)",
+                name="Participação da regional",
                 line=dict(color="#FF8C00", dash="dot"),
                 hovertemplate=(
                     "Etapa: %{x}<br>"
-                    "Participação (Regional): %{y:.2%}<extra></extra>"
+                    "Participação da regional: %{y:.2%}<extra></extra>"
                 ),
             )
         )
@@ -681,7 +681,7 @@ elif aba == "Desempenhos nas Provas Objetivas":
                 x=etapas_obj,
                 y=acertos_obj_reg_frac,
                 mode="lines+markers",
-                name="Acertos (Regional)",
+                name="Média da regional",
                 marker=dict(color="#000000"),
                 line=dict(color="#000000", dash="dot"),
                 hovertemplate=(
@@ -928,3 +928,4 @@ elif aba == "Detalhamento de Acessos":
             st.subheader("Detalhamento de Acessos")
 
             st.dataframe(styler_acessos, use_container_width=True, hide_index=True)
+
