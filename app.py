@@ -347,7 +347,7 @@ if aba == "Desempenhos em Redação":
             x=etapas_red,
             y=part_frac,
             mode="lines+markers+text",
-            name="Participação",
+            name="Participação da escola",
             text=[f"{v:.2f}%" if pd.notna(v) else "" for v in part],
             textposition="top center",
             marker=dict(color="#FF8C00"),
@@ -372,7 +372,7 @@ if aba == "Desempenhos em Redação":
             x=etapas_red,
             y=notas_norm,
             mode="lines+markers+text",
-            name="Notas",
+            name="Média da escola",
             text=[f"{v:.2f}" if pd.notna(v) else "" for v in notas],
             textposition="top center",
             marker=dict(color="#000000"),
@@ -599,7 +599,7 @@ elif aba == "Desempenhos nas Provas Objetivas":
             x=etapas_obj,
             y=part_obj_frac,
             mode="lines+markers+text",
-            name="Participação (Escola)",
+            name="Participação da escola",
             text=[f"{v:.2f}%" if pd.notna(v) else "" for v in part_obj],
             textposition="top center",
             marker=dict(color="#FF8C00"),
@@ -670,7 +670,7 @@ elif aba == "Desempenhos nas Provas Objetivas":
                 line=dict(color="#FF8C00", dash="dot"),
                 hovertemplate=(
                     "Etapa: %{x}<br>"
-                    "Participação da regional: %{y:.2%}<extra></extra>"
+                    "Participação: %{y:.2%}<extra></extra>"
                 ),
             )
         )
@@ -928,5 +928,6 @@ elif aba == "Detalhamento de Acessos":
             st.subheader("Detalhamento de Acessos")
 
             st.dataframe(styler_acessos, use_container_width=True, hide_index=True)
+
 
 
